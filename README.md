@@ -60,19 +60,52 @@ D7 = X Y Z
 
 
 ### PROGRAM 
+1.create module encoder and decoder.
+
+2.Get inputs and outputs for encoders and decoders.
+
+3.perform or operation for encoder and and logic for decoders.
+
+4.perform RTL LOGIC and get waveform.
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
+Developed by: Rakesh.V
+RegisterNumber: 22008590 
+## ENCODER
+```
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+## DECODER
+```
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule 
+```
 
 
 
 ### RTL LOGIC  
+ ## ENCODER
+ ![214761606-1b296af7-b939-4beb-a1ed-40c71d871d50](https://user-images.githubusercontent.com/121490890/215005602-39e4f0ff-24bd-4a80-acb1-99c898004cf7.png)
 
+ 
+ ## DECODER
+![214761628-62e0fb8f-51df-4bf4-b9c3-91f677aa403f](https://user-images.githubusercontent.com/121490890/215005626-62d4845b-ad98-4ec0-873a-54671292b63a.png)
 
 
 
@@ -81,16 +114,25 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+## ENCODER
+![214372416-3be035c8-1b9d-465f-8b0b-8b6d862297f8](https://user-images.githubusercontent.com/121490890/215006175-fe8e526e-3abe-45fd-9b25-6a5cf13e05e7.png)
 
+## DECODER
+![199727272-b025753a-672b-4034-8597-cf0219602d69](https://user-images.githubusercontent.com/121490890/215005808-6a57b854-343c-42f7-8c61-ecec1abad972.png)
 
 
 
 
 ### TRUTH TABLE 
+## ENCODER
+![214771633-587c66e7-3bc3-42f4-be6f-af93d33137b6](https://user-images.githubusercontent.com/121490890/215005668-bc0a6541-a6a2-4fe7-8b8c-56238501b8e6.png)
 
+## DECODER
+![214771609-3ac6d95d-5356-4e69-9fc4-528000efe4ca](https://user-images.githubusercontent.com/121490890/215005677-2a17a061-ea10-44cf-aeb2-a5f15c7ccfee.png)
 
 
 
 
 
 ### RESULTS 
+to 3 Encoder and 3to8 Decoder has been implemented by using verilog and its outputs are validated.
